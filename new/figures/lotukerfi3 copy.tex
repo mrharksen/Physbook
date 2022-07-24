@@ -1,0 +1,119 @@
+%% Copyright 2009 Ivan Griffin
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Ivan Griffin
+%
+% This work consists of the files periodic_table.tex
+
+%Description
+%-----------
+%periodic_table.tex - an example file illustrating the Periodic
+%                     Table of Chemical Elements using TikZ
+
+%Created 2009-12-08 by Ivan Griffin.  Last updated: 2010-01-11
+%
+%Thanks to Jerome
+%-------------------------------------------------------------
+
+\documentclass[border=1pt,tikz,landscape]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,calc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage[pdftex]{graphicx}
+\usepackage[icelandic]{babel}
+\usepackage{multirow}
+\usepackage[separate-uncertainty=true,multi-part-units=single,output-decimal-marker={,},group-separator = {.}]{siunitx}
+\addto\extrasicelandic{\sisetup{locale = DE}}
+
+\newcommand{\CommonElementTextFormat}[4]
+{
+  \begin{minipage}{2.2cm}
+    \centering
+      {\textbf{#1} \hfill #2}%
+      \linebreak \linebreak
+      {\textbf{#3}}%
+      \linebreak \linebreak
+      {{#4}}
+  \end{minipage}
+}
+
+\newcommand{\NaturalElementTextFormat}[4]
+{
+  \CommonElementTextFormat{#1}{#2}{\LARGE {#3}}{#4}
+}
+
+\newcommand{\OutlineText}[1]
+{
+\ifpdf
+  % Couldn't find a nicer way of doing an outline font with TikZ
+  % other than using pdfliteral 1 Tr
+  %
+  \pdfliteral direct {0.5 w 1 Tr}{#1}%
+  \pdfliteral direct {1 w 0 Tr}%
+\else
+  % pstricks can do this with \pscharpath from pstricks
+  %
+  \pscharpath[shadow=false,
+    fillstyle=solid,
+    fillcolor=white,
+    linestyle=solid,
+    linecolor=black,
+    linewidth=.2pt]{#1} 
+\fi
+}
+
+\newcommand{\SyntheticElementTextFormat}[4]
+{
+\ifpdf
+  \CommonElementTextFormat{#1}{#2}{\OutlineText{\LARGE #3}}{#4}
+\else
+  % pstricks approach results in slightly larger box
+  % that doesn't break, so fudge here
+  \CommonElementTextFormat{#1}{#2}{\OutlineText{\Large #3}}{#4}
+\fi
+}
+
+
+\begin{document}
+
+
+\begin{tikzpicture}[font=\sffamily, scale=0.5, transform shape]
+
+%% Element Styles
+  \tikzstyle{Element} = [draw=black, ElementFill,
+    minimum width=2.75cm, minimum height=2.75cm, node distance=2.75cm]
+  \tikzstyle{AlkaliMetal} = [Element, AlkaliMetalFill]
+  \tikzstyle{AlkalineEarthMetal} = [Element, AlkalineEarthMetalFill]
+  \tikzstyle{Metal} = [Element, MetalFill]
+  \tikzstyle{Metalloid} = [Element, MetalloidFill]
+  \tikzstyle{Nonmetal} = [Element, NonmetalFill]
+  \tikzstyle{Halogen} = [Element, HalogenFill]
+  \tikzstyle{NobleGas} = [Element, NobleGasFill]
+  \tikzstyle{LanthanideActinide} = [Element, LanthanideActinideFill]
+  \tikzstyle{PeriodLabel} = [font={\sffamily\LARGE}, node distance=2.0cm]
+  \tikzstyle{GroupLabel} = [font={\sffamily\LARGE}, minimum width=2.75cm, node distance=2.0cm]
+  \tikzstyle{TitleLabel} = [font={\sffamily\Huge\bfseries}]
+
+
+  \node at ($(La.north -| Fr.west) + (5em,-15em)$) [name=elementLegend, Element, fill=white]
+    {\NaturalElementTextFormat{}{}{Rafeind}{}};
+\node at ($(La.north -| Fr.west) + (15em,-15em)$) [name=elementLegend, Element, fill=white]
+    {\NaturalElementTextFormat{}{}{Róteind}{}};
+\node at ($(La.north -| Fr.west) + (25em,-15em)$) [name=elementLegend, Element, fill=white]
+    {\NaturalElementTextFormat{}{}{Nifteind}{}};
+
+\end{tikzpicture}
+
+\end{document}

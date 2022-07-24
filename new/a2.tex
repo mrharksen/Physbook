@@ -1,0 +1,227 @@
+
+\chapter{Óvissureikningar}
+
+\section{Formlegar reiknireglur við meðhöndlun óvissu}
+
+\begin{tcolorbox}
+\begin{definition}
+Við segjum að $A \pm \Delta A$ sé \textbf{mælistærð} ef $A$ og $\Delta A$ hafa sömu vídd.
+\end{definition}
+\end{tcolorbox}
+
+Dæmi um mælistærð væri til dæmis lengd þumlungs, mæld með reglustiku sem $\SI{3.8(2)}{cm}$, eða lengd fótar mæld með reglustiku sem $\SI{26.8(5)}{cm}$. Við viljum skilja hvaða óvissu $10$ þumlungar hafa gefið að við vitum lengdina á einum þumlungi með óvissu. Við viljum líka skilja hver óvissan er við samlagningu og frádrátt mælistærða, t.d.~er hæð Michael Jordans iðulega sögð vera 6 fet og 6 þumlungar.
+Hvernig eigum við að meta óvissuna í slíkum afleiddum stærðum?
+Að lokum þurfum við síðan að átta okkur á því hver óvissan verður þegar við margföldum saman stærðir eða deilum þeim. Til dæmis ef við myndum vilja reikna rúmmál hlutar.
+
+\begin{tcolorbox}
+\begin{setning} \label{Th:uncertain}
+Látum $A \pm \Delta A$ og $B \pm \Delta B$ vera mælistærðir og látum $k$ vera fasta. Þá gildir að:
+\begin{enumerate}[label = \textbf{(\roman*)}]
+    \item $k(A\pm \Delta A) = k A \pm k \Delta A.$
+    \item $(A \pm \Delta A) + (B \pm \Delta B) =  (A+B) \pm (\Delta A + \Delta B).$
+    \item $(A \pm \Delta A) - (B \pm \Delta B) =  (A-B) \pm (\Delta A + \Delta B).$
+    \item $(A \pm \Delta A)(B \pm \Delta B) =  AB \pm AB\left( \frac{\Delta A}{A} + \frac{\Delta B}{B} \right).$
+    \item $\frac{A \pm \Delta A}{B \pm \Delta B} =  \frac{A}{B} \pm \frac{A}{B} \left( \frac{\Delta A}{A} + \frac{\Delta B}{B} \right).$
+\end{enumerate}
+\end{setning}
+\end{tcolorbox}
+
+\begin{proof} Við gerum þetta koll af kolli:
+
+\begin{enumerate}[label = \textbf{(\roman*)}]
+    \item Við tengjum mælistærðina $A\pm \Delta A$ við talnabilið $[A-\Delta A, A + \Delta A]$. Þegar við skölum allar tölurnar á þessu talnabili með $k$ fáum við talnabilið $[k(A-\Delta A), k(A+\Delta A) ] = [kA-k\Delta A), kA+k\Delta A) ]$ en þar með höfum við sýnt að $k(A\pm \Delta A) = k A \pm k \Delta A$.
+    
+    \item Við erum núna að leggja saman bilin $[A-\Delta A, A+\Delta A ]$ og $[B-\Delta B, B+\Delta B ]$ en þá fáum við einmitt:
+    \begin{align*}
+        [A-\Delta A, A+\Delta A ] + [B-\Delta B, B+\Delta B ] = [A+B - \Delta A - \Delta B, A + B + \Delta A + \Delta B]
+    \end{align*}
+    En það er jafngilt því að $(A \pm \Delta A) + (B \pm \Delta B) =  (A+B) \pm (\Delta A + \Delta B)$.
+    
+    \item Við erum núna að draga bilið $[B-\Delta B, B+\Delta B ]$ frá billinu $[A-\Delta A, A+\Delta A ]$ en þá er lægsta útkoman einmitt fengin með því að taka lægstu töluna í menginu $[A-\Delta A, A+\Delta A ]$, þ.e.~$A - \Delta A$ og draga frá henni stærstu töluna í menginu $[B-\Delta B, B+\Delta B ]$, þ.e.~$B + \Delta B$. Því er lægsta talan í nýja menginu: $A-B - \Delta A - \Delta B$.
+    Stærsta hugsanlega útkoman í nýja menginu er fengin með því að taka stærstu töluna í fyrra menginu, þ.e.~$A + \Delta A$ og draga frá henni minnstu töluna í síðara menginu, þ.e.~$B - \Delta B$ en þá fáum við einmitt að stærsta talan í nýja menginu er $A - B + \Delta A + \Delta B $ en þar með höfum við sýnt að:
+    \begin{align*}
+        [A-\Delta A, A+\Delta A ] - [B-\Delta B, B+\Delta B ] = [A -B - (\Delta A + \Delta B), A - B + (\Delta A + \Delta B)]
+    \end{align*}
+    En það er jafngilt því að $(A \pm \Delta A) - (B \pm \Delta B) =  (A-B) \pm (\Delta A + \Delta B)$.
+    
+    \item Lægsta útkomman er fengin með því að taka lægri töluna á hvoru bilanna fyrir sig og margfalda þær saman svo við höfum að neðri mörk bilsins eru gefin með:
+    \begin{align*}
+        (A - \Delta A)(B - \Delta B) = AB - \Delta A \, B - A \, \Delta B + \Delta A \, \Delta B \approx AB - \Delta A\, B - A \Delta B
+    \end{align*}
+    Þar sem við höfum notað að bæði $\Delta A$ og $\Delta B$ eru litlar stærðir svo við getum hunsað stærðina $\Delta A \, \Delta B$ því margfeldi tveggja lítilla talna er þá þá örlítil tala. Stærsta útkomman er fengin með því að margfalda saman stærri tölurnar tvær, en þá höfum við einmitt að:
+    \begin{align*}
+        (A + \Delta A)(B + \Delta B) = AB + \Delta A \, B + A \, \Delta B + \Delta A \, \Delta B \approx AB + \Delta A\, B + A \Delta B
+    \end{align*}
+    Þar sem við höfum aftur nýtt okkur að $\Delta A \Delta B$ er lítil stærð. Við höfum því að margfeldi bilanna gefur:
+    \begin{align*}
+        \left[AB - \Delta A\, B - A \Delta B; AB + \Delta A\, B + A \Delta B\right] = \left[AB - AB\left( \frac{\Delta A}{A} + \frac{\Delta B}{B} \right) ; AB + AB\left( \frac{\Delta A}{A} + \frac{\Delta B}{B} \right) \right]
+    \end{align*}
+    Þar sem við höfum tekið $AB$ út fyrir sviga í seinni liðnum. Þetta er jafngilt því að:
+    \begin{align*}
+        (A \pm \Delta A)(B \pm \Delta B) =  AB \pm AB\left( \frac{\Delta A}{A} + \frac{\Delta B}{B} \right)
+    \end{align*}
+    
+    \item Við þurfum nú að nota nálgunina $(1+x)^n \approx 1 + nx$ en hún gildir fyrir lítil $x$. Við tökum eftir því að stærðin $\Delta B/B$ er lítil svo við höfum þá að:
+    \begin{align*}
+        \frac{1}{B \pm \Delta B} = \frac{1}{B}\left(1 \pm \frac{\Delta B}{B}\right)^{-1} \approx \frac{1}{B}\left(1 \mp \frac{\Delta B}{B} \right)
+    \end{align*}
+    En þá fáum við samkvæmt margföldunarreglunni í lið (iv) að:
+    \begin{align*}
+        \frac{A \pm \Delta A}{B \pm \Delta B} \approx \left( A \pm \Delta A \right) \left( \frac{1}{B} \pm \frac{\Delta B}{B^2} \right) = \frac{A}{B} \pm \frac{A}{B}\left( \frac{\Delta A}{A} + \frac{\Delta B / B^2}{1/B} \right) = \frac{A}{B} \pm \frac{A}{B} \left( \frac{\Delta A}{A} + \frac{\Delta B}{B} \right).
+    \end{align*}
+\end{enumerate}
+\end{proof}
+
+Aðferðina sem við notuðum til þess að sanna síðasta liðin má gera formlegri með svokölluðum Taylor-nálgunum en þannig má til dæmis meta hvort að nálgunin sé góð eða ekki. Við setjum fram almennu reikniregluna en hún er aðeins til yndisauka á þessu stigi málsins:
+\begin{tcolorbox}
+\begin{setning}
+Látum $f$ vera samfellt, diffranlegt fall og $A \pm \Delta A$ vera mælistærð. Þá gildir að:
+\begin{align*}
+    f(A \pm \Delta A) \approx f(A) \pm f'(A) \Delta A
+\end{align*}
+þar sem að $f'$ táknar afleiðu fallsins $f$.
+\end{setning}
+\end{tcolorbox}
+
+Til frekari skýringar þá höfum við fyrir fallið $f(x) = 1/x$ að $f'(x) = - 1/x^2$ en þá höfum við einmitt að:
+\begin{align*}
+    f(B \pm \Delta B) = \frac{1}{B \pm \Delta B} \approx \frac{1}{B} \pm \frac{1}{B^2} \Delta B.
+\end{align*}
+Sem var einmitt það sem við notuðum í útleiðslunni á lið (v) í setningu \ref{Th:uncertain} hér á undan.
+
+\newpage
+
+\section{Sýnidæmi um óvissureikninga}
+
+
+\begin{enumerate}[label = \textbf{Sýnidæmi \thechapter.\arabic*.}]
+
+\item Við tökum vatn við upphafshitastig $T_1 = \SI{18.5(3)}{\degree C}$ og hitum það upp þar til það hefur náð lokahitastigi $T_2 = \SI{22.0(3)}{\degree C}$. Hver er hitastigsbreytingin, $T_2 - T_1$, með óvissu? 
+\end{enumerate}
+
+\textbf{Lausn:} Takið eftir því hvað rithátturinn okkar er óheppilegur því við notum $\Delta$ bæði fyrir breytingu og óvissu! Þess vegna nota sumir litla $\delta$ fyrir óvissu í staðinn. Við höfum þá að hitastigsbreytingin er:
+\begin{align*}
+    T_2 - T_1 = \SI{3.5(6)}{\degree C} 
+\end{align*}
+
+\begin{enumerate}[label = \textbf{Sýnidæmi \thechapter.\arabic*.}]
+
+\setcounter{enumi}{1}
+
+\item Lítum á flöt sem hefur lengd $\ell \pm \Delta \ell = \SI{1.50(2)}{m}$ og breidd $b \pm \Delta b = \SI{20(1)}{cm}$. Ákvarðið flatarmál flatarins, $A \pm \Delta A$, með óvissu.
+
+\end{enumerate}
+
+\textbf{Lausn:} Við höfum þá að:
+\begin{align*}
+    A \pm \Delta A = (\ell \pm \Delta \ell)(b \pm \Delta b) = \ell b \pm \ell b \left( \frac{\Delta \ell}{\ell} + \frac{\Delta b}{b} \right)
+\end{align*}
+Við athugum að: $A = \ell b = \SI{1,50}{m} \cdot \SI{20}{cm} = \SI{1,50}{m} \cdot \SI{0.20}{m} = \SI{0.30}{m^2}$ og
+\begin{align*}
+    \Delta A = \ell b \left( \frac{\Delta \ell}{\ell} + \frac{\Delta b}{b} \right) = \SI{0.30}{m^2} \left( \frac{\SI{0.02}{m}}{\SI{1.50}{m}} + \frac{\SI{1}{cm}}{\SI{20}{cm}} \right) = \SI{0.019}{m^2}
+\end{align*}
+En þar með ályktum við að $A \pm \Delta A = \SI{0.30(2)}{m^2}$. Takið eftir að við námunduðum óvissuna upp þar sem það hefur enga merkingu að skrifa $0,30 \pm 0,019 \, \si{m^2}$. Í rauninni ákvarðast fjöldi markverðra stafa í útkommunni á stærð óvissunnar.
+
+\begin{enumerate}[label = \textbf{Sýnidæmi \thechapter.\arabic*.}]
+
+\setcounter{enumi}{2}
+
+\item Hlaupari nokkur hleypur vegalengd, $s = \SI{100.0(2)}{m}$, á tíma, $t = \SI{9.85(6)}{s}$. Ákvarðið meðalhraða hlauparans, $v_m = \frac{s}{t}$, í hlaupinu með óvissu.
+\end{enumerate}
+
+\textbf{Lausn:} Við fáum að:
+\begin{align*}
+    v_m \pm \Delta v_m &= \frac{s \pm \Delta s}{t \pm \Delta t}  = \frac{s}{t} \pm \frac{s}{t}\left( \frac{\Delta s}{s} + \frac{\Delta t}{t} \right) \\
+    &= \frac{\SI{100.0}{m}}{\SI{9.85}{s}} \pm \frac{\SI{100.0}{m}}{\SI{9.85}{s}}\left( \frac{0,2}{100,0} + \frac{0,06}{9,85} \right) \\
+    &= \SI{10.15}{m/s} \pm \SI{0.08}{m/s} \\
+    &= \SI{10,2(1)}{m/s}.
+\end{align*}
+Takið eftir að hlutfallsóvissur eru alltaf víddarlausar stærðir svo við getum sleppt því að skrifa einingar þar.
+
+
+
+\begin{enumerate}[label = \textbf{Sýnidæmi \thechapter.\arabic*.}]
+
+\setcounter{enumi}{3}
+
+\item Lítum á rör með geisla $r = \SI{5.2(2)}{cm}$ og lengd $\ell = \SI{63(2)}{cm}$. Ákvarðið rúmmál rörsins, $V \pm \Delta V$.
+
+\end{enumerate}
+
+\textbf{Lausn:} Við höfum þá að:
+\begin{align*}
+    V \pm \Delta V = \pi r^2 \ell \pm  \pi r^2 \ell \left( \frac{\Delta r}{r} + \frac{\Delta r}{r} + \frac{\Delta \ell }{\ell} \right) = \SI{5.352e-3}{m^3} \pm \SI{5.82e-4}{m^3} = (\SI{5.4(6)}{})\cdot 10^{-3} \, \si{m^3}.
+\end{align*}
+
+
+\begin{enumerate}[label = \textbf{Sýnidæmi \thechapter.\arabic*.}]
+
+\setcounter{enumi}{4}
+
+\item Látum mælistærðina $x \pm \Delta x$ vera gefna. Ákvarðið óvissuna í stærðinni $x^n$.
+
+\end{enumerate}
+
+\textbf{Lausn:} Við höfum þá að $f(x) = x^n$, en $f'(x) = n x^n$ svo við ályktum að:
+\begin{align*}
+    (x \pm \Delta x)^n = f(x \pm \Delta x) = f(x) \pm f'(x) \Delta x =  x^n \pm n x^{n-1} \Delta x =x^n \pm n x^n \frac{\Delta x}{x}.
+\end{align*}
+
+\begin{enumerate}[label = \textbf{Sýnidæmi \thechapter.\arabic*.}]
+
+\setcounter{enumi}{4}
+
+\item Látum mælistærðina $\theta \pm \Delta \theta$ vera gefna. Ákvarðið óvissuna í stærðunum $\sin(\theta)$ og $\cos(\theta)$.
+
+\end{enumerate}
+
+\textbf{Lausn:} Við höfum þá að $f(\theta) = \sin(\theta)$, en $f'(\theta) = \cos(\theta)$ svo við ályktum að:
+\begin{align*}
+    \sin(\theta \pm \Delta \theta) = f(\theta \pm \Delta \theta) = f(\theta) \pm f'(\theta) \Delta \theta =  \sin\theta \pm \cos(\theta)\Delta \theta.
+\end{align*}
+Eins fæst fyrir $g(\theta) =\cos(\theta)$ að:
+\begin{align*}
+    \cos(\theta \pm \Delta \theta) = g(\theta \pm \Delta \theta) = g(\theta) \pm g'(\theta) \Delta \theta =  \cos\theta \pm \sin(\theta)\Delta \theta.
+\end{align*}
+Takið eftir því að hér þarf óvissan í horninu $\theta$ að vera mæld í radíönum (annars passa víddirnar ekki).
+\newpage
+
+\section{Dæmi}
+
+
+\begin{enumerate}[label = \textbf{Dæmi \thechapter.\arabic*.}]
+
+\item Árið 240 f.Kr.~mældi gríski stærðfræðingurinn Eratosþenes ummál jarðar. Niðurstaða hans var að ummál jarðar væri $\SI{250000(10000)}{\text{skeið}}$. Skeiðið er lengdarmælieining sem notuð var í Grikklandi til forna og eitt skeið samsvarar $\SI{158}{m}$. Setjið fram niðurstöðu Eratosþenesar ásamt óvissu með einingunni $\si{km}$ og segið til um hvort rétt gildi á ummáli jarðar, \SI{40075}{km}, sé innan óvissumarkanna.
+
+\item Halldór Kiljan Laxness er að velta fyrir sér hversu mörgum bókum hann geti komið fyrir í sundlauginni sinni við Gljúfrastein. Rúmmál einnar bókar er $V_{\text{bók}} = \SI{1270(50)}{cm^3}$ en rúmmál sundlaugarinnar er $V_{\text{laug}} = lbd$ þar sem $l = \SI{10.0(1)}{m}$ er lengd, $b = \SI{4.5(1)}{m}$ er breidd og $d = \SI{2.1(1)}{m}$ er dýpt sundlaugarinnar. Hversu mörgum bókum kemur skáldið fyrir í sundlauginni sinni?
+
+\item Rétthyrnd járnplata mælist $\SI{330(4)}{mm}$ á lengd og $\SI{170(2)}{mm}$ á breidd.
+\begin{enumerate}[label = \textbf{(\alph*)}]
+    \item Reiknið ummál plötunnar með óvissu og skráið með réttum fjölda markverðra stafa.
+    \item Reiknið flatarmál plötunnar með óvissu og skráið með réttum fjölda markverðra stafa.
+\end{enumerate}
+
+\item Sívalningur hefur lengd $\ell = \SI{22.0(5)}{cm}$, geisla $r = \SI{2.5(1)}{cm}$ og massa $m = \SI{3500(5)}{g}$. Finnið eðlismassa sívalingsins með óvissu.
+
+\item Hafdís var að hita $m = \SI{100(2)}{g}$ af vatni. Upphafshitastig vatnsins var $T_1 = \SI{7.3(2)}{\degree C}$ en lokahitastig þess er $T_2 = \SI{85.0(2)}{\degree C}$. Eðlisvarmi vatns er $c_{\text{vatn}} = \SI{4.186}{kJ/kg\degree C}$. Notið jöfnuna $Q = c_{\text{vatn}}m\Delta T$ til þess að finna hversu mikinn varma $Q \pm \Delta Q$ hún þurfti til þess a hita vatnið. Skráið svarið með óvissu og réttum fjölda markverðra stafa.
+
+\item Bergljót vaknar á ókunnuglegum stað. Hún dregur því þá ályktun að henni hafi verið rænt af geimverum. Bergljót er vel undirbúin fyrir slíkar aðstæður og hefur því ávallt með sér gorm með gormstuðul $k$. Hún festir massa $m = \SI{5.0(1)}{kg}$ við gorminn og lætur hann sveiflast í lóðrétta stefnu. Hún veit að á jörðinni gildir að $k = 4\pi^2\frac{m}{T^2}$ þar sem $T$ er umferðartími sveiflunnar.
+\begin{enumerate}[label = \textbf{(\alph*)}]
+    \item Bergljót mælir umferðartíma sveiflunnar sem $T = \SI{3.0(5)}{s}$. Reiknið gormstuðulinn með óvissu og skráið niðurstöðuna með óvissu og réttum fjölda markverðra stafa.
+    
+    \item Bergljót hefur mælt gormstuðul gormsins í tilraunastofunni sinni heima og veit að gormurinn hennar hefur gormstuðulinn $\SI{30(2)}{N/m}$. Sýna mælingar Bergljótar fram á að henni hafi verið rænt af geimverum?
+\end{enumerate}
+
+\item Þegar tvö viðnám $R_1$ og $R_2$ eru hliðtengd nýtur heildarviðnámið, $R_{\text{heild}}$, í rásinni eftirfarandi jöfnu:
+\begin{align*}
+    \frac{1}{R_{\text{heild}}} = \frac{1}{R_1} + \frac{1}{R_2}
+\end{align*}
+Látum nú $R_1 = \SI{25.4(5)}{\Omega}$ og $R_2 = \SI{17.8(5)}{\Omega}$. Hvert er þá heildarviðnámið, $R_{\text{heild}}$ í rásinni?
+
+\item Fræg er sagan af Arkímedesi og krúnu Hiero II Sýrakúsukonungs. Hiero hafði fengið gullsmið nokkurn til þess að smíða kórónu handa sér. En fúskarinn blandaði silfri í blönduna og hélt eftir hluta gullsins. Útaf undarlegri lögun kórónunnar reyndist erfitt að mæla rúmmál hennar (og þar með eðlismassa hennar). Það var ekki fyrr en Arkímedes uppgötvaði sniðuga leið til þess að mæla rúmmál óreglulegra hluta með því að sökkva þeim í vatn sem það komst upp um svikahrappinn.
+Sagan segir að Arkímedes hafi eftir uppgötvunina hlaupið nakinn um stræti Sýrakúsu og öskrað: ,,Eureka!'' sem á forngrísku merkir ,,Ég hef fundið''. Eðlismassi gulls er $\rho_\text{gull} =  \SI{19.30(1)}{g/cm^3}$ en eðlismassi volframs (einnig nefnt þungsteinn) er $\rho_{\text{volfram}} = \SI{19.25(1)}{g/cm^3}$. Vegna þess hve litlu munar á eðlisþyngd málmanna tíðkast það í dag að fúskarar komi fyrir volfram inni í gullstöngum. Ein gullstöng vegur undir venjulegum kringumstæðum $\SI{1000(1)}{g}$.
+Segjum að $\SI{1}{g}$ af gulli kosti $\SI{8514}{kr}$ á meðan $\SI{1}{g}$ af volfram kosti $\SI{48}{kr}$. Hversu mikið geta fúskrarnir grætt á því að skipta út volframi fyrir gull per stöng? Gerum ráð fyrir að þeir séu sniðugir og reyni að halda eðlismassa blöndunnar innan óvissumarka gullsins.
+
+\end{enumerate}
+
+\newpage

@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale = 0.9]
+
+    % define coordinates
+    \coordinate (O) at (0,0) ;
+    \coordinate (A) at (0,4) ;
+    \coordinate (B) at (0,-4) ;
+    
+    % media
+    \fill[blue!25!,opacity=.3] (-4,0) rectangle (4,4);
+    \fill[blue!60!,opacity=.3] (-4,0) rectangle (4,-4);
+    \node[left] at (-2,1) {$n_{2}$};
+    \node[left] at (-2,-1) {$n_{1}$};
+
+    % axis
+    \draw[dash pattern=on5pt off3pt] (A) -- (B) ;
+
+    % rays
+    \draw[red,ultra thick,directed] (O) -- (50:4);
+    \draw[blue,reverse directed,ultra thick] (O) -- (-110:3.5);
+    %Punktar
+    \filldraw[color=blue] (-110:3.5) circle (0.08) node[anchor=north, color=black] {$A(x_{1},y_{1})$};
+    \filldraw[color=red] (50:4) circle (0.08)
+    node[anchor=south, color=black] {$B(x_{2},y_{2})$};
+    \filldraw[] (O) circle (0.08) node[anchor=west, color=black];
+    % angles
+    \draw (0,1) arc (90:50:1);
+    \draw (0,-1.4) arc (270:250:1.4) ;
+    \node[] at (260:1.8)  {$\theta_{1}$};
+    \node[] at (70:1.4)  {$\theta_{2}$};
+    \node[] at (-17:0.8) {$C(x,0)$};
+\end{tikzpicture}

@@ -1,0 +1,106 @@
+\documentclass[oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[icelandic]{babel}
+\addto\extrasicelandic{\sisetup{locale = DE}}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage[inline]{enumitem}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{appendix}
+\usepackage{lscape}
+\usepackage{moreenum}
+\usepackage{xcolor}
+\usepackage[pdftex, hidelinks]{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{dsfont}
+\usepackage[separate-uncertainty=true,multi-part-units=single,output-decimal-marker={,},group-separator = {.}]{siunitx}
+\usepackage{epigraph}
+\usepackage{tasks}
+\usepackage{gnuplottex}
+\usepackage{mhchem}
+\usepackage[autostyle]{csquotes}
+
+
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{gnuplottex}
+
+
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings,arrows.meta,bending}
+\tikzset{% 
+    attach arrow/.style={
+    decoration={
+        markings,
+         mark=at position 0 with {\pgfextra{%
+         \pgfmathsetmacro{\tmpArrowTime}{\pgfkeysvalueof{/tikz/arc arrow/length}/(\pgfdecoratedpathlength)}%
+         \xdef\tmpArrowTime{\tmpArrowTime}}},
+        mark=at position {#1-3*\tmpArrowTime} with {\coordinate(@1);},
+        mark=at position {#1-2*\tmpArrowTime} with {\coordinate(@2);},
+        mark=at position {#1-1*\tmpArrowTime} with {\coordinate(@3);},
+        mark=at position {#1+\tmpArrowTime/2} with {\coordinate(@4);
+        \draw[-{Stealth[length=\pgfkeysvalueof{/tikz/arc arrow/length},bend]}] plot[smooth]
+         coordinates {(@1) (@2) (@3) (@4)};},
+        },
+     postaction=decorate,
+     },
+     attach arrow/.default=0.5,
+     arc arrow/.cd,length/.initial=2mm,
+}
+\usepackage{circuitikz}
+
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Lögmál}[chapter]
+\newtheorem{setning}[theorem]{Regla}
+\newtheorem{definition}[theorem]{Skilgreining}
+\newtheorem{remark}[theorem]{Athugasemd}
+\newtheorem{example}[theorem]{Dæmi}
+
+\DeclareMathOperator\diag{diag}
+\DeclareMathOperator\artanh{artanh}
+\DeclareMathOperator\Det{Det}
+\DeclareMathOperator\sgn{sgn}
+
+\newcommand{\R}{\mathbb{R}}  
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\duck}[1]{,,#1``}
+\newcommand{\iduck}[1]{\textit{,,#1``}}
+\newcommand{\educk}[1]{\emph{,,#1``}}
+
+\newcommand{\explain}[2]{\underbrace{#1}_\textrm{$#2$}}
+
+\title{Eðlisfræði handa 5.~bekk eðlisfræðideildar II}
+\author{Matthias Baldursson Harksen}
+\date{}
+
+\setlength\parindent{0pt}

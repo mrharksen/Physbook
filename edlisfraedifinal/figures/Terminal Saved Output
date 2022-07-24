@@ -1,0 +1,42 @@
+Last login: Mon Nov 22 22:14:11 on console
+mbh@noether ~ % ls 
+1 30.txt	Dropbox		Music		la.txt		nordar.png
+Applications	GitHub		Pictures	lal.txt		results1.txt
+Desktop		Google Drive	Public		lala.txt	results2.txt
+Documents	Library		Support		lam.txt		texput.log
+Downloads	Movies		kla.txt		minima
+mbh@noether ~ % cd Desktop 
+mbh@noether Desktop % subl robbi.py
+mbh@noether Desktop % python3 robbi.py 
+Traceback (most recent call last):
+  File "/Users/mbh/Desktop/robbi.py", line 13, in <module>
+    print("Hraði Robba er:" + num2str(v))
+NameError: name 'num2str' is not defined
+mbh@noether Desktop % python3 robbi.py
+Hraði Robba er:3615819.209039548
+mbh@noether Desktop % python3 robbi.py
+Traceback (most recent call last):
+  File "/Users/mbh/Desktop/robbi.py", line 13, in <module>
+    print("Hraði Robba er:" + round(v,3))
+TypeError: can only concatenate str (not "float") to str
+mbh@noether Desktop % python3 robbi.py
+  File "/Users/mbh/Desktop/robbi.py", line 14
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+mbh@noether Desktop % python3 robbi.py
+Traceback (most recent call last):
+  File "/Users/mbh/Desktop/robbi.py", line 13, in <module>
+    print("Hraði Robba er:" + round(v,-2))
+TypeError: can only concatenate str (not "float") to str
+mbh@noether Desktop % python3 robbi.py
+Hraði Robba er:3615800.0
+mbh@noether Desktop % python3 robbi.py
+Hraði Robba er: 3615800.0
+mbh@noether Desktop % python3 robbi.py
+Hraði Robba er: 3615819.21
+mbh@noether Desktop % python3 robbi.py
+Hraði Robba er: 3615819
+mbh@noether Desktop % python3 robbi.py
+Hraði Robba er: 3615819.209039548
+mbh@noether Desktop % 

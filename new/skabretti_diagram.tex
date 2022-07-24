@@ -1,0 +1,47 @@
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=2.5]
+    
+          %  Hjálparlínur
+         % \draw[help lines] (-1,-1) grid (7,3);
+        
+          %  Skilgreiningar á hnitum
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (4,0);
+        \coordinate (C) at (4,1.8);
+        \coordinate (fer1) at (2.29284, 1.02846);
+        \coordinate (fer2) at (2.80037, 1.26);
+        \coordinate (fer3) at (2.59199, 1.77105);
+        \coordinate (fer4) at (2.07716, 1.53591);
+        \coordinate (theta) at (0.95,0.22);
+        \coordinate (m) at (2.44101, 1.39482);
+        \coordinate (mtoppur) at (2.35, 1.67);
+        \coordinate (th) at (2.18, 2.1);
+        \coordinate (mbotn) at (2.55, 1.15);
+        \coordinate (fg) at (2.55, 0.3);
+        \coordinate (fglidun) at (2.84, 0.46);
+        \coordinate (mhhlid) at (2.7, 1.5);
+        \coordinate (fnun) at (3.4, 1.83);
+        
+        
+          %  Einföldustu teikningar
+        \draw[line width = 1] (A) -- (B) -- (C) -- (A); %Þríhyrningur
+        \draw[line width = 1] (fer1) -- (fer2) -- (fer3) -- (fer4) -- (fer1); %Massi
+        \draw[->] (mtoppur) -- (th);
+        \draw[->] (mbotn) -- (fg);
+        \draw[->] (mhhlid) -- (fnun);
+         \draw[dotted] (mbotn) -- (fglidun) -- (fg);
+
+          %  Nokkrar merkingar
+        \draw[line width = 1] (0.8, 0) arc [radius=0.8, start angle=0, delta angle=24.23];
+        \draw[line width = 0.5] (2.55, 0.9) arc [radius=0.25, start angle=270, delta angle=24.23];
+        \node at (theta) {\Large \(\theta\)};
+        \node at (2.35,0.6) { \(F_g\)};
+        \node[rotate=10] at (2.63,0.78) { \(\theta\)};
+        \node[rotate=24.23] at (m) {\Large \(m\)};
+        \node[rotate=20] at (2.15,1.8) { \(\text{Þ}\)};
+        \node[rotate=20] at (3,1.8) { \(F_{\text{nún}}=\mu \text{Þ}\)};
+        \node[rotate=24] at (2.75,0.25) {\small \(F_{g}\sin\theta\)};
+        \node[rotate=-66] at (2.8,0.85) {\small \(F_{g}\cos\theta\)};
+    \end{tikzpicture}
+\end{figure} 

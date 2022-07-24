@@ -1,0 +1,141 @@
+\documentclass[border=2pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{calc, positioning, shapes, backgrounds, fit, arrows}
+\usepackage{pgf-spectra}
+
+\usepackage{siunitx}
+
+\usepackage{contour}
+
+\begin{document}
+
+\pgfdeclarehorizontalshading{visiblelight}{50bp}{% https://tex.stackexchange.com/a/348492/120853
+    color(0bp)=(violet!25);
+    color(8.33bp)=(blue!25);
+    color(16.67bp)=(cyan!25);
+    color(25bp)=(green!25);
+    color(33.33bp)=(yellow!25);
+    color(41.5bp)=(orange!25);
+    color(50bp)=(red!25)
+}%
+
+\begin{tikzpicture}[%
+        raylabel/.style={font=\scriptsize}
+    ]
+    \def\minexponent{-6}
+    \def\maxexponent{6}
+    \def\spectrumheight{9em}
+
+    \pgfmathtruncatemacro{\nextminexponent}{\minexponent + 1}
+
+    % Main foreach loop, drawing the wavelengths as powers of 10 in an alternating fashion: even on top, odd at bottom. Then connects them with help lines
+    \foreach [count=\i, remember=\exponent as \previousexponent, evaluate=\i as \currentposition using int(\i/2)] \exponent in {\minexponent, \nextminexponent, ..., \maxexponent}{
+        \ifodd\exponent
+            \def\height{0}
+        \else
+            \def\height{\spectrumheight}
+        \fi
+
+        % Anchor at baseline to get all nodes on same baseline.
+        % https://tex.stackexchange.com/questions/133227/how-to-align-text-in-tikz-nodes-by-baseline#comment300863_133227
+        \node[anchor=base] (WAVELENGTH_\exponent) at (\exponent, \height) {\contour{white}{\num{e\exponent}}};
+
+        \ifnum\i > 1
+            \ifodd\i
+                \node (LABEL_\currentposition)
+                    at ($(WAVELENGTH_\exponent)!0.5!(WAVELENGTH_\previousexponent)$)
+                    {};% This is left as a node as opposed to coordinate: fill it out with '\currentposition' for debugging
+            \else
+                % Do not draw connection at exponent 1:
+                \pgfmathparse{\exponent != 1}% \pgfmathparse stores result (0 or 1) in macro \pgfmathresult
+                \ifnum\pgfmathresult = 1
+                    \draw[help lines]
+                        (WAVELENGTH_\previousexponent) --(WAVELENGTH_\exponent)
+                        node[midway] (CONNECTION_\currentposition) {}% This is left as a node as opposed to coordinate: fill it out with '\currentposition' for debugging
+                        coordinate[at start] (CONNECTION_\currentposition_START)
+                        coordinate[at end] (CONNECTION_\currentposition_END);
+                \fi
+            \fi
+        \fi
+    }
+
+    % Create an arrow shape that fits around all relevant nodes, but do not draw it.
+    % Draw it manually later to leave out the 'bottom' of the arrow.
+    % We still need this invisible arrow for lining up of coordinates
+    \node[
+        single arrow,
+        single arrow head extend=0pt,
+        single arrow tip angle=150,% Inner angle of arrow tip
+        fit={([xshift=-3em]CONNECTION_1_START)(CONNECTION_1_END)(CONNECTION_\maxexponent_START)([xshift=5em]CONNECTION_\maxexponent_END)},
+        inner sep=0pt
+    ]
+    (ARROW) {};
+
+    \node[align=center] (THERM) at ([yshift=3em]WAVELENGTH_1|-ARROW.after tail) {thermal\\radiation};% Only works because exponent 1 is between -1 and 3
+    \draw (THERM) -| ([yshift=-1.5em]WAVELENGTH_-1|-THERM);
+    \draw (THERM) -| ([yshift=-1.5em]WAVELENGTH_3|-THERM);
+
+    % On background layer so already drawn arrow and scale lines cover it up nicely
+    \begin{scope}[on background layer]
+        \node[
+            inner sep=0pt,
+            outer sep=0pt,
+            fit={([xshift=-2.2em]WAVELENGTH_0|-ARROW.after tail)([xshift=-2.2em]WAVELENGTH_1|-ARROW.before tail)}, shading=visiblelight]
+            (SMALL_VISIBLE_LIGHT) {};
+
+        \shade[
+            left color=white,
+            right color=violet!25,
+            middle color=violet!5,
+            outer sep=0pt
+            ]
+            (CONNECTION_3_START) -- (CONNECTION_3_END) -- ([xshift=\pgflinewidth]SMALL_VISIBLE_LIGHT.south west) -- ([xshift=\pgflinewidth]SMALL_VISIBLE_LIGHT.north west) -- cycle;
+
+        \shade[
+            left color=red!25,
+            right color=white,
+            middle color=red!5,
+            outer sep=0pt,
+            ]
+            (CONNECTION_5_START) -- (CONNECTION_5_END) -- ([xshift=-\pgflinewidth]SMALL_VISIBLE_LIGHT.south east) -- ([xshift=-\pgflinewidth]SMALL_VISIBLE_LIGHT.north east) -- cycle;
+    \end{scope}
+
+    % Some labels can be drawn automatically at the designated label coordinates:
+    \foreach [count=\i] \label in {
+            {Gamma\\geislar},
+            {Röntgen-\\geislar},
+            {},%Skip this one
+            {innrautt}
+        }{
+            \node[raylabel, align=center] at (LABEL_\i) {\label};
+        }
+
+    % These do not fit the loop and are drawn manually:
+    \node[raylabel, align=right, anchor=north] at ([yshift=-1em]$(WAVELENGTH_-2)!0.45!(WAVELENGTH_0)$) {Útfjólublátt};
+
+    \node[raylabel, fill=white] at (CONNECTION_6) {radio waves};
+
+    \node[raylabel, left=0.1em of CONNECTION_1, align=right] {cosmic\\rays};
+
+    \node[
+        draw,
+        fill=black!20,
+        below=4em of SMALL_VISIBLE_LIGHT,
+        align=center,
+        label=above:{\textbf{Visible Spectrum}}
+        ] (FULL_VISIBLE_LIGHT) {%
+        \pgfspectra[width=13em,height=3em]\\%pgfspectra also has a builtin axis which of course much better than this terrible approach, but it is in nanometer
+            {\num{0.38} \hfill\num{0.48} \hfill\num{0.58}\hfill \num{0.68} \hfill\num{0.78}}\\
+        {\hfill blue \hspace{0.1em} green yellow \hfill red \hfill}
+    };
+
+    % Draw 'magnifying' trapeze, on background so it is covered by scale labels
+    \begin{scope}[on background layer]
+        \filldraw[help lines, fill=black!10] (FULL_VISIBLE_LIGHT.north east) -- (SMALL_VISIBLE_LIGHT.south east) -- (SMALL_VISIBLE_LIGHT.south west) -- (FULL_VISIBLE_LIGHT.north west) -- cycle;
+    \end{scope}
+
+    % Draw around arrow manually, leaving its tail open
+    \draw[draw, thick] (ARROW.after tail) -- (ARROW.before head) -- (ARROW.before tip) -- (ARROW.tip) -- (ARROW.after tip) -- (ARROW.after head) -- (ARROW.before tail);
+\end{tikzpicture}
+\end{document}

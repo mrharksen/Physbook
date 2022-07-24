@@ -1,0 +1,186 @@
+\babel@toc {icelandic}{}
+\contentsline {chapter}{\numberline {1}Einingar}{12}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Alþjóðlega einingakerfið}{12}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Staðalform og markverðir stafir}{12}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Fermi vandamál}{13}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Víddargreining}{14}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Dæmi}{15}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Óvissureikningar}{16}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Formlegar reiknireglur við meðhöndlun óvissu}{16}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Sýnidæmi um óvissureikninga}{18}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Dæmi}{19}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Gangfræði}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Staða, hraði og hröðun}{20}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Usain Bolt}{23}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Föst hröðun og stöðujöfnurnar}{24}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Dæmi}{25}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Orka, skriðþungi og varðveislulögmál}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Hreyfiorka og stöðuorka}{30}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Árekstrar}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Dæmi}{34}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Kasthreyfing}{38}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Að kasta bolta yfir horni}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Dæmi}{40}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Kraftar}{42}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Útdráttur úr Principia eftir Newton}{42}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Lögmál Newtons}{43}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Nokkrir kraftar}{44}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Fleiri kraftar}{46}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Sýnidæmi}{47}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Dæmi}{51}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Tengsl krafta við varðveislulögmálin}{56}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Vinna}{56}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Geymnir og ógeymnir kraftar}{57}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Stöðuorka}{58}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Orkuvarðveisla}{59}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Skriðþungavarðveisla}{60}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Sýnidæmi}{60}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Dæmi}{61}{section.7.7}%
+\contentsline {chapter}{\numberline {8}Þyngdarlögmálið}{64}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Þyngdarlögmál Newtons}{64}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Hringhreyfing}{65}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Þriðja lögmál Keplers fyrir hringhreyfingu}{67}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Lögmál Keplers}{68}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Sýnidæmi}{69}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Dæmi}{73}{section.8.6}%
+\contentsline {chapter}{\numberline {9}Snúningar}{76}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Hornstaða, hornhraði og hornhröðun}{76}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Massamiðjan}{77}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Hverfitregður og snúningsásar}{79}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Hverfitregður algengra hluta}{81}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Útleiðslur á nokkrum hverfitregðum}{82}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Kraftvægi}{83}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Hverfiþungi}{84}{section.9.7}%
+\contentsline {section}{\numberline {9.8}Snúningsorka}{84}{section.9.8}%
+\contentsline {section}{\numberline {9.9}Sýnidæmi}{86}{section.9.9}%
+\contentsline {section}{\numberline {9.10}Dæmi}{91}{section.9.10}%
+\contentsline {chapter}{\numberline {10}Flæðiefni og þrýstingur}{99}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Eðlismassi}{99}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Þrýstingur}{100}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Staðalloftþrýstingur}{100}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Lögmál Pascals}{101}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Lögmál Arkímedesar}{101}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Inngangur að vökvaaflfræði}{102}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Samfeldnilögmálið}{102}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Lögmál Bernoullis}{103}{section.10.8}%
+\contentsline {section}{\numberline {10.9}Dæmi}{104}{section.10.9}%
+\contentsline {chapter}{\numberline {11}Einföld sveifluhreyfing}{107}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Ritháttur}{107}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Einföld sveifluhreyfing}{108}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Gormar}{109}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Lóðréttur gormur}{110}{section.11.4}%
+\contentsline {section}{\numberline {11.5}Pendúll}{111}{section.11.5}%
+\contentsline {section}{\numberline {11.6}Flókin sveifluhreyfing (ítarefni)}{112}{section.11.6}%
+\contentsline {section}{\numberline {11.7}Dæmi}{113}{section.11.7}%
+\contentsline {chapter}{\numberline {12}Bylgjur}{115}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Hvað er bylgja?}{115}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Staðbylgjur á streng}{116}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Hljóðbylgjur}{117}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Að leysa bylgjujöfnuna}{118}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Afl og styrkur}{119}{section.12.5}%
+\contentsline {section}{\numberline {12.6}Dopplerhrif}{120}{section.12.6}%
+\contentsline {section}{\numberline {12.7}Eigintíðnir og eiginsveifluhættir}{122}{section.12.7}%
+\contentsline {section}{\numberline {12.8}Bylgjusamliðun}{125}{section.12.8}%
+\contentsline {section}{\numberline {12.9}Hviður}{126}{section.12.9}%
+\contentsline {section}{\numberline {12.10}Tónlist (ítarefni)}{127}{section.12.10}%
+\contentsline {section}{\numberline {12.11}Chladni platan (ítarefni)}{129}{section.12.11}%
+\contentsline {section}{\numberline {12.12}Dæmi}{130}{section.12.12}%
+\contentsline {chapter}{\numberline {13}Varmafræði}{136}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Varmaorka}{136}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}Bræðsluvarmi og gufunarvarmi}{136}{subsection.13.1.1}%
+\contentsline {section}{\numberline {13.2}Kjörgas}{137}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Fyrsta lögmál varmafræðinnar}{139}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Varmaferli}{139}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Dæmi}{142}{section.13.5}%
+\contentsline {chapter}{\numberline {14}Rafsviðið}{145}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Rafkraftalögmál Coulombs}{147}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Rafsvið frá punkthleðslu}{148}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Raftvískaut}{150}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Lagrange-punktar}{151}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Rafsviðið meðfram samhverfuás hringlaga gjarðar}{152}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Rafsviðið frá óendanlega stórri plötu (*)}{154}{section.14.6}%
+\contentsline {section}{\numberline {14.7}Dæmi}{155}{section.14.7}%
+\contentsline {chapter}{\numberline {15}Lögmál Gauss}{158}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Rafflæði}{159}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Lögmál Gauss fyrir þyngdarsviðið (*)}{163}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Dæmi}{165}{section.15.3}%
+\contentsline {chapter}{\numberline {16}Raforka og rafspenna}{169}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Plötuþéttir}{171}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Rafsvarar}{172}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Orkuþéttleiki rafsviðsins}{173}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Klassískur geisli rafeindarinnar (*)}{173}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Dæmi}{175}{section.16.5}%
+\contentsline {chapter}{\numberline {17}Inngangur að rafrásum}{180}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Íhlutir í rafrásir}{180}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Lögmál Kirchoffs}{181}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Spennufall}{182}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Raðtenging og hliðtenging}{183}{section.17.4}%
+\contentsline {section}{\numberline {17.5}Drude-líkanið (*)}{187}{section.17.5}%
+\contentsline {section}{\numberline {17.6}Dæmi}{189}{section.17.6}%
+\contentsline {chapter}{\numberline {18}Segulsvið og lögmál Ampéres}{194}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Dæmi}{202}{section.18.1}%
+\contentsline {chapter}{\numberline {19}Lögmál Faradays og spanstraumur}{208}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Lögmál Faradays}{208}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Sýnidæmi}{209}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Sjálfspan í spólu}{210}{section.19.3}%
+\contentsline {section}{\numberline {19.4}Hvers vegna er riðstraumur málið?}{211}{section.19.4}%
+\contentsline {section}{\numberline {19.5}Dæmi}{212}{section.19.5}%
+\contentsline {chapter}{\numberline {20}Tímaþróun í rafrásum}{215}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Jafnspennurásir (DC)}{215}{section.20.1}%
+\contentsline {subsection}{\numberline {20.1.1}RC-rás:}{215}{subsection.20.1.1}%
+\contentsline {subsection}{\numberline {20.1.2}LR-rás:}{217}{subsection.20.1.2}%
+\contentsline {subsection}{\numberline {20.1.3}LC-rás:}{219}{subsection.20.1.3}%
+\contentsline {subsection}{\numberline {20.1.4}RCL-rás:}{220}{subsection.20.1.4}%
+\contentsline {section}{\numberline {20.2}Riðspennurásir (AC)}{221}{section.20.2}%
+\contentsline {section}{\numberline {20.3}Dæmi}{223}{section.20.3}%
+\contentsline {chapter}{\numberline {21}Saga atómsins}{227}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Hið agnarsmáa kemur í skömmtum}{227}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Thomson uppgötvar rafeindina}{228}{section.21.2}%
+\contentsline {section}{\numberline {21.3}Olíudropatilraun Millikan og Fletchers}{230}{section.21.3}%
+\contentsline {section}{\numberline {21.4}Gullþynnutilraun Rutherfords}{231}{section.21.4}%
+\contentsline {section}{\numberline {21.5}Chadwick uppgötvar nifteindina}{233}{section.21.5}%
+\contentsline {section}{\numberline {21.6}Staðallíkanið}{235}{section.21.6}%
+\contentsline {chapter}{\numberline {22}Afstæðiskenningin}{238}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Inngangur}{238}{section.22.1}%
+\contentsline {section}{\numberline {22.2}Frumsendur afstæðiskenningarinnar}{240}{section.22.2}%
+\contentsline {section}{\numberline {22.3}Tímalenging}{241}{section.22.3}%
+\contentsline {section}{\numberline {22.4}Lengdarstytting}{242}{section.22.4}%
+\contentsline {section}{\numberline {22.5}Lorentz-ummyndanir}{243}{section.22.5}%
+\contentsline {section}{\numberline {22.6}Óbreyttna tímarúmsvegalengdin}{243}{section.22.6}%
+\contentsline {section}{\numberline {22.7}Tímarúmsmyndir}{244}{section.22.7}%
+\contentsline {section}{\numberline {22.8}Hraðasamlagning}{246}{section.22.8}%
+\contentsline {section}{\numberline {22.9}Dopplerhrif fyrir ljós}{246}{section.22.9}%
+\contentsline {section}{\numberline {22.10}Skriðþungi, orka og kraftur}{247}{section.22.10}%
+\contentsline {section}{\numberline {22.11}Nálganir}{249}{section.22.11}%
+\contentsline {section}{\numberline {22.12}Dæmi}{250}{section.22.12}%
+\contentsline {chapter}{\numberline {23}Ljós}{254}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Lögmál Snells}{254}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Alspeglun}{256}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Upprifjun: Einföld sveifluhreyfing og bylgjusamliðun}{256}{section.23.3}%
+\contentsline {section}{\numberline {23.4}Tveggja raufa tilraun Youngs: Ljóssamliðun}{258}{section.23.4}%
+\contentsline {section}{\numberline {23.5}Margar raufar}{260}{section.23.5}%
+\contentsline {section}{\numberline {23.6}Ein rauf: Ljósbognun}{260}{section.23.6}%
+\contentsline {section}{\numberline {23.7}Bæði samliðunarmynstur og bognunarmynstur}{261}{section.23.7}%
+\contentsline {section}{\numberline {23.8}Linsur og geislagangsmyndir}{262}{section.23.8}%
+\contentsline {section}{\numberline {23.9}Safnlinsur: Raunveruleg mynd}{262}{section.23.9}%
+\contentsline {section}{\numberline {23.10}Safnlinsur: Ímynduð mynd}{263}{section.23.10}%
+\contentsline {section}{\numberline {23.11}Dreifilinsur}{264}{section.23.11}%
+\contentsline {section}{\numberline {23.12}Dæmi}{265}{section.23.12}%
+\contentsline {chapter}{\numberline {24}Kjarneðlisfræði}{269}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Stærð kjarnans}{269}{section.24.1}%
+\contentsline {section}{\numberline {24.2}Geislavirkni}{270}{section.24.2}%
+\contentsline {section}{\numberline {24.3}Kjarnaorka og stöðugleiki frumefna}{272}{section.24.3}%
+\contentsline {section}{\numberline {24.4}Mismunandi gerðir af jónandi geislun (\boldmath $\alpha $, \boldmath $\beta $ og \boldmath $\gamma $ geislun)}{273}{section.24.4}%
+\contentsline {subsection}{\numberline {24.4.1}\boldmath $\alpha $-geislun}{273}{subsection.24.4.1}%
+\contentsline {subsection}{\numberline {24.4.2}\boldmath $\beta $-geislun}{274}{subsection.24.4.2}%
+\contentsline {subsection}{\numberline {24.4.3}Gamma-geislun}{274}{subsection.24.4.3}%
+\contentsline {section}{\numberline {24.5}Dæmi}{275}{section.24.5}%
+\contentsline {chapter}{\numberline {25}Inngangur að skammtafræði}{279}{chapter.25}%
+\contentsline {section}{\numberline {25.1}Sögulegur inngangur}{279}{section.25.1}%
+\contentsline {section}{\numberline {25.2}Glerpíputilraun Faradays}{280}{section.25.2}%
+\contentsline {section}{\numberline {25.3}Ljósröfunartilraunin og útskýring Einsteins}{281}{section.25.3}%
+\contentsline {section}{\numberline {25.4}Efnisbylgjur de Broglie}{282}{section.25.4}%
+\contentsline {section}{\numberline {25.5}Klassískur líftími atómsins (*)}{283}{section.25.5}%
+\contentsline {section}{\numberline {25.6}Bohr-líkanið}{284}{section.25.6}%
+\contentsline {section}{\numberline {25.7}Óendanlegur mættisbrunnur}{285}{section.25.7}%
+\contentsline {section}{\numberline {25.8}Dæmi}{287}{section.25.8}%

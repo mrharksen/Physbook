@@ -1,0 +1,135 @@
+% Author: Izaak Neutelings (September 2020)
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage[outline]{contour} % glow around text
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{angles,quotes} % for pic
+\usetikzlibrary{arrows.meta} % for arrow size
+\usetikzlibrary{bending} % for arrow head angle
+\usetikzlibrary{decorations.pathmorphing} % for decorate random steps
+\tikzset{>=latex} % for LaTeX arrow head
+\usepackage{xcolor}
+\contourlength{1.3pt}
+
+\colorlet{xcol}{blue!70!black}
+\colorlet{xcol'}{xcol!50!red}
+\colorlet{vcol}{green!45!black}
+\colorlet{acol}{red!50!blue!80!black!80}
+\tikzstyle{rvec}=[->,very thick,xcol,line cap=round]
+\tikzstyle{vvec}=[->,very thick,vcol,line cap=round]
+\tikzstyle{avec}=[->,very thick,acol,line cap=round]
+\colorlet{myred}{red!65!black}
+\tikzstyle{force}=[->,myred,very thick,line cap=round]
+\tikzstyle{mass}=[line width=0.5,draw=red!50!black,fill=red!50!black!10,rounded corners=1,
+                  top color=red!50!black!30,bottom color=red!50!black!10,shading angle=20]
+\tikzstyle{disk}=[line width=0.5,orange!30!black,fill=orange!40!black!10,
+                  top color=orange!40!black!20,bottom color=orange!40!black!10,shading angle=20]
+\tikzstyle{pole}=[line width=0.5,blue!20!black,fill=orange!20!black!10,
+                  top color=blue!20!black!20,bottom color=blue!20!black!10,shading angle=20]
+\tikzstyle{rope}=[brown!70!black,line width=1,line cap=round] %very thick
+\tikzstyle{myarr}=[-{Latex[length=3,width=2,flex'=1]},thin]
+\tikzstyle{mydashed}=[dash pattern=on 2pt off 1pt]
+\def\rope#1{ \draw[rope,black,line width=1.4] #1; \draw[rope,line width=1.1] #1; }
+\def\tick#1#2{\draw[thick] (#1) ++ (#2:0.1) --++ (#2-180:0.2)}
+\newcommand\rightAngle[4]{
+  \pgfmathanglebetweenpoints{\pgfpointanchor{#2}{center}}{\pgfpointanchor{#3}{center}}
+  \coordinate (tmpRA) at ($(#2)+(\pgfmathresult+45:#4)$);
+  %\draw[white,line width=0.6] ($(#2)!(tmpRA)!(#1)$) -- (tmpRA) -- ($(#2)!(tmpRA)!(#3)$);
+  \draw[black] ($(#2)!(tmpRA)!(#1)$) -- (tmpRA) -- ($(#2)!(tmpRA)!(#3)$);
+}
+
+
+\begin{document}
+
+% STATIONARY REFERENCE FRAME - CENTRIFUGAL
+\def\R{2}      % disk radius
+\def\t{0.1}    % disk thickness
+\def\p{0.05}   % pole radius
+\def\P{1.3}    % pole height
+\def\r{0.24}   % mass radius
+\def\L{0.7*\R} % rope length
+\def\H{2.0}    % human height
+\begin{tikzpicture}
+  
+  % PERSON
+  \coordinate (H) at (0,\H);
+  \draw[thick,line cap=round]
+    (H)++(-165:0.3) to[out=-140,in=60]++ (-130:0.3)
+    to[out=65,in=-90,looseness=1.0]++ (80:0.45) to[out=90,in=120,looseness=1.4]++ (20:0.2); % pony tail
+  \draw[thick,fill=white] (H) circle (0.3);
+  \draw[thick,line cap=round] (H)++(-140:0.3) to[out=80,in=-120,looseness=1.8]++ (40:0.6); % hair
+  \draw[thick] (H)++(-90:0.3) coordinate (N) to[out=-95,in=95]++ (0,-0.40*\H) coordinate (P);
+  \draw[thick,line cap=round] (N)++(-95:0.03) to[out=-60,in=95]++ (0.10*\H,-0.4*\H) coordinate (RH);
+  \draw[thick,line cap=round] (N)++(-95:0.03) to[out=-120,in=90]++ (-0.08*\H,-0.4*\H);
+  \draw[thick] (P) to[out=-70,in=95] (0.08*\H,0);
+  \draw[thick] (P) to[out=-100,in=72] (-0.06*\H,0);
+  
+  % AXIS
+  \node (A) at (0.38*\H,0.94*\H) {S};
+  \draw[<->,line width=0.9]
+    (A)++(0.25*\H,0.28*\H) node[left,scale=0.9] {$z$} --++ (0,-0.3*\H) coordinate (O) --++
+         (0.3*\H,0) node[below right=-3.5,scale=0.9] {$y$};
+  \draw[->,line width=0.9] (O) --++ (-120:0.25*\H) node[left=-2,scale=0.9] {$x$};
+  
+  % DISK
+  \begin{scope}[shift={(0.5*\H+\R,0.3*\H)}]
+    \coordinate (T) at (0,\r);
+    \draw[disk] (-\R,0) --++ (0,-\t) arc(180:360:{\R} and {0.4*\R}) --++ (0,\t);
+    \draw[disk] (0,0) ellipse({\R} and {0.4*\R});
+    \rope {(T) --++ (\L,0) coordinate (M)};
+    \draw[pole] (-\p,\P) --++ (0,-\P) arc(180:360:{\p} and {0.4*\p}) --++ (0,\P);
+    \draw[pole] (0,\P) ellipse({\p} and {0.4*\p});
+    \rope {(-1.4*\p,0.85*\r) arc(180:360:{1.4*\p} and {0.4*\p})}
+    \rope {(-1.4*\p,1.00*\r) arc(180:360:{1.4*\p} and {0.4*\p})}
+    \rope {(-1.4*\p,1.15*\r) arc(180:360:{1.4*\p} and {0.4*\p})}
+    \draw[force] (M)++(150:1.1*\r) --++ (-0.5*\L,0) node[above=-1] {$\vb{T}$};
+    \draw[avec] (M)++(210:1.1*\r) --++ (-0.5*\L,0) node[right=0,below=-1] {$\vb{a}$}; %_\mathrm{cm}
+    \draw[mass] (M) circle(\r) node {$m$};
+    \draw[->] (10:1.05*\R) arc(10:50:{1.05*\R} and {0.4*\R}) node[above left=-2] {$\omega$};
+    \draw[vvec] (0,\P+0.014) --++ (0,0.7*\L) node[midway,left] {$\vb*\omega$};
+  \end{scope}
+  
+\end{tikzpicture}
+
+
+% MOVING REFERENCE FRAME - CENTRIFUGAL
+\begin{tikzpicture}
+  
+  % DISK
+  \coordinate (T) at (0,\r);
+  \draw[disk] (-\R,0) --++ (0,-\t) arc(180:360:{\R} and {0.4*\R}) --++ (0,\t);
+  \draw[disk] (0,0) ellipse({\R} and {0.4*\R});
+  
+  % PERSON
+  \draw[thick,fill=white] (-0.35*\R,\H) circle (0.15*\H) coordinate (H);
+  \draw[thick] (H)++(-90:0.15*\H) coordinate (N) to[out=-95,in=95]++ (0,-0.40*\H) coordinate (P);
+  \draw[thick,line cap=round] (N)++(-95:0.03) to[out=-70,in=190]++ (0.34*\H,-0.20*\H);
+  \draw[thick,line cap=round] (N)++(-95:0.03) to[out=-120,in=-80]++ (-0.17*\H,-0.12*\H) to[out=100,in=-100]++ (0.02*\H,0.25*\H);
+  \draw[thick] (P) to[out=-70,in=95] ($(H)+(0.08*\H,-\H)$);
+  \draw[thick] (P) to[out=-100,in=72] ($(H)+(-0.08*\H,-\H)$);
+  
+  % POLE + MASS
+  \rope {(T) --++ (\L,0) coordinate (M)};
+  \draw[pole] (-\p,\P) --++ (0,-\P) arc(180:360:{\p} and {0.4*\p}) --++ (0,\P);
+  \draw[pole] (0,\P) ellipse({\p} and {0.4*\p});
+  \rope {(-1.4*\p,0.85*\r) arc(180:360:{1.4*\p} and {0.4*\p})}
+  \rope {(-1.4*\p,1.00*\r) arc(180:360:{1.4*\p} and {0.4*\p})}
+  \rope {(-1.4*\p,1.15*\r) arc(180:360:{1.4*\p} and {0.4*\p})}
+  \draw[force] (M)++(150:1.1*\r) --++ (-0.5*\L,0) node[above=-1] {$\vb{T}$};
+  \draw[force] (M)++(30:1.1*\r) --++ (0.5*\L,0) node[above=0] {$\vb{F}_\mathrm{cf}$};
+  \draw[mass] (M) circle(\r) node {$m$};
+  
+  % AXIS
+  \node (A) at (57:0.88*\R) {S$'$};
+  \draw[<->,line width=0.9]
+    (A)++(0.25*\H,0.28*\H) node[left,scale=0.9] {$z'$} --++ (0,-0.3*\H) coordinate (O) --++
+         (0.3*\H,0) node[below right=-3.5,scale=0.9] {$y'$};
+  \draw[->,line width=0.9] (O) --++ (-120:0.25*\H) node[left=-2,scale=0.9] {$x'$};
+  
+\end{tikzpicture}
+
+
+\end{document}
